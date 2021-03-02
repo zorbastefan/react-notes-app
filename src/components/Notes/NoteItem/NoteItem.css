@@ -1,0 +1,27 @@
+.note__item {
+	/* overflow: hidden; */
+	border-radius: 16px;
+	background: var(--note-background);
+	box-shadow: 6px 6px 18px rgba(61, 61, 61, 0.1);
+}
+
+.note__item a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding: 16px;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: 500;
+	color: inherit;
+	text-decoration: none
+}
+
+.note__item--completed {
+	opacity: 0.5;
+	box-shadow: none;
+}
+
+.note__item--completed a {
+	text-decoration: line-through;
+}

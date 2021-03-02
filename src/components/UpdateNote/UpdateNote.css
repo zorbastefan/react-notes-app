@@ -1,0 +1,45 @@
+.update-note {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background: none;
+}
+
+.update-note__go-back {
+	position: absolute;
+	top: 32px;
+	left: 32px;
+}
+
+.update-note__go-back a {
+	color: white;
+}
+
+.update-note__form {
+	width: 320px;
+	display: flex;
+	flex-direction: column;
+}
+
+.update-note__completed {
+	align-self: center;
+}
+
+.update-note__submit {
+	margin-top: 16px;
+	align-self: flex-start;
+}
+
+.update-note__delete-note {
+	position: absolute;
+	bottom: 32px;
+	right: 50%;
+	margin-right: -20px;
+	color: var(--invalid-color);
+}

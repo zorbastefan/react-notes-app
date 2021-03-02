@@ -1,0 +1,50 @@
+.toggle {
+	position: relative;
+	display: inline-block;
+	height: 32px;
+	margin: 8px;
+	user-select: none;
+	cursor: pointer;
+}
+
+.toggle > input[type="checkbox"] {
+	display: none;
+}
+
+.toggle > input[type="checkbox"] + span::before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: 0;
+	height: 16px;
+	width: 40px;
+	border-radius: 4px;
+	background: #eceff1;
+	transition: all 100ms linear;
+}
+
+.toggle > input[type="checkbox"] + span {
+	display: inline-block;
+	height: 100%;
+	padding: 8px 0 8px 48px;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: 900;
+}
+
+.toggle > input[type="checkbox"] + span::after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 0;
+	height: 24px;
+	width: 24px;
+	border-radius: 8px;
+	background: #cfd8dc;
+	transition: all 100ms linear;
+}
+
+.toggle > input[type="checkbox"]:checked + span::after {
+	background: var(--light-orange);
+	transform: translateX(14px);
+}

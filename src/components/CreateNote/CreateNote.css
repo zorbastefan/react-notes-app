@@ -1,0 +1,26 @@
+.create-note {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+}
+
+.create-note__form {
+	width: 320px;
+}
+
+.create-note__go-back {
+	position: absolute;
+	top: 32px;
+	left: 32px;
+}
+
+.create-note__go-back a {
+	color: white;
+}

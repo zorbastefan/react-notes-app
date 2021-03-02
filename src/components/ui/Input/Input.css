@@ -1,0 +1,119 @@
+.form__field {
+	position: relative;
+	height: 80px;
+}
+
+/* INPUT */
+.form__field__input {
+	position: absolute;
+	top: 20px;
+	height: 40px;
+	width: 100%;
+	outline: none;
+	border: none;
+	border-radius: 8px;
+	padding: 13px 12px;
+	background: var(--input-background);
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 500;
+	color: var(--black);
+	transition: all 100ms ease;
+}
+
+.form__field__input--invalid {
+	background: var(--invalid-background);
+	color: var(--invalid-color);
+}
+
+/* LABEL */
+.form__field__label {
+	vertical-align: middle;
+	pointer-events: none;
+	position: absolute;
+	top: 33px;
+	left: 12px;
+	height: 14px;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 500;
+	transition: all 100ms ease;
+}
+
+.form__field__input:focus + .form__field__label {
+	top: 3px;
+}
+
+.form__field__input:not(:placeholder-shown).form__field__input:not(:focus) + .form__field__label {
+	top: 3px;
+}
+
+.form__field__label--invalid {
+	color: var(--invalid-color);
+}
+
+/* REQUIRED */
+.form__field__required {
+	display: inline-block;
+	vertical-align: middle;
+	height: 14px;
+	margin-left: 4px;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 500;
+	color: var(--invalid-color);
+}
+
+/* ICON */
+.form__field__icon {
+	user-select: none;
+	position: absolute;
+	top: 28px;
+	right: 12px;
+	cursor: pointer;
+	transition: all 100ms ease;
+}
+
+.form__field__icon--invalid {
+	color: var(--invalid-color);
+}
+
+/* WARNING */
+.form__field__warning {
+	pointer-events: none;
+	position: absolute;
+	right: 12px;
+	bottom: -4px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 500;
+	color: var(--invalid-color);
+	opacity: 0;
+	transition: all 100ms ease;
+}
+
+.form__field__warning--show {
+	pointer-events: auto;
+	opacity: 1;
+	bottom: 4px;
+}
+
+/* HINT */
+.form__field__hint {
+	pointer-events: auto;
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 500;
+	opacity: 1;
+	transition: all 100ms ease;
+}
+
+.form__field__hint--hide {
+	/* pointer-events: none; */
+	opacity: 0;
+	bottom: -4px;
+}
