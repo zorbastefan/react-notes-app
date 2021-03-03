@@ -10,18 +10,18 @@ import { asyncAuth } from '../../store/actions/auth-actions';
 class Auth extends Component {
 	state = {
 		email: {
-			value: '', 
-			touched: false, 
-			valid: false, 
-			hint: 'ex. test@mail.com', 
-			warning: 'Warning! Invalid email field.', 
+			value: '',
+			touched: false,
+			valid: false,
+			hint: 'ex. test@mail.com',
+			warning: 'Warning! Invalid email field.',
 		},
 		password: {
-			value: '', 
-			touched: false, 
-			valid: false, 
-			hint: 'ex. Password5@', 
-			warning: 'Warning! Invalid password field.', 
+			value: '',
+			touched: false,
+			valid: false,
+			hint: 'ex. Password5@',
+			warning: 'Warning! Invalid password field.',
 			showPassword: false
 		},
 		registration: false
@@ -96,7 +96,7 @@ class Auth extends Component {
 
 		this.props.onAsyncAuth(this.state.registration, { email, password });
 	}
-	
+
 	render() {
 		const email = this.state.email;
 		const password = this.state.password;
@@ -105,59 +105,60 @@ class Auth extends Component {
 		return (
 			<div className="auth">
 				{
-					this.props.loading ? 
-					<Loader /> : 
-					<Fragment>
-						<h1 className="page-heading auth__page-heading">
-							{
-								registration ? 
-								'Register' : 
-								'Log in'
-							}
-						</h1>
-						<form onSubmit={this.handleSubmit} className="auth__form">
-							<Input 
-								type="email" 
-								name="email" 
-								value={email.value}
-								onChange={this.handleFieldChange} 
-								touched={email.touched} 
-								onBlur={this.handleTouch} 
-								valid={email.valid} 
-								required 
-								label="Email" 
-								hint={email.hint} 
-								warning={email.warning} />
-							<Input 
-								type={password.showPassword ? 'text' : 'password'} 
-								name="password" 
-								value={password.value}
-								onChange={this.handleFieldChange} 
-								touched={password.touched} 
-								onBlur={this.handleTouch} 
-								valid={password.valid} 
-								required 
-								label="Password" 
-								icon={password.showPassword ? 'visibility_off' : 'visibility'} 
-								iconOnClick={this.hadnleShowPassword} 
-								hint={password.hint} 
-								warning={password.warning} />
-							<button type="submit" disabled={!email.valid || !password.valid} className="btn--submit">
+					this.props.loading ?
+						<Loader /> :
+						<Fragment>
+							<h1 className="page-heading auth__page-heading">
 								{
-									registration ? 
-									'Register' : 
-									'Log in'
+									registration ?
+										'Register' :
+										'Log in'
 								}
-							</button>
-							<button type="button" className="btn--unstyled" style={{ float: 'right' }} onClick={this.handleMode}>
-								{
-									registration ? 
-									'Log in instead' : 
-									'Register instead'
-								}
-							</button>
-						</form>
-					</Fragment>
+							</h1>
+							<form onSubmit={this.handleSubmit} className="auth__form">
+								<Input
+									type="email"
+									name="email"
+									value={email.value}
+									onChange={this.handleFieldChange}
+									touched={email.touched}
+									onBlur={this.handleTouch}
+									valid={email.valid}
+									required
+									label="Email"
+									hint={email.hint}
+									warning={email.warning} />
+								<Input
+									type={password.showPassword ? 'text' : 'password'}
+									name="password"
+									value={password.value}
+									onChange={this.handleFieldChange}
+									touched={password.touched}
+									onBlur={this.handleTouch}
+									valid={password.valid}
+									required
+									label="Password"
+									icon={password.showPassword ? 'visibility_off' : 'visibility'}
+									iconOnClick={this.hadnleShowPassword}
+									hint={password.hint}
+									warning={password.warning} />
+								<button type="submit" disabled={!email.valid || !password.valid} className="btn--submit">
+									{
+										registration ?
+											'Register' :
+											'Log in'
+									}
+								</button>
+								<button type="button" className="btn--unstyled" style={{ float: 'left' }}>Forgot password?</button>
+								<button type="button" className="btn--unstyled" style={{ float: 'right' }} onClick={this.handleMode}>
+									{
+										registration ?
+											'Log in instead' :
+											'Register instead'
+									}
+								</button>
+							</form>
+						</Fragment>
 				}
 			</div>
 		);

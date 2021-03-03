@@ -13,9 +13,9 @@ import { asyncDeleteNote, asyncUpdateNote, updateNote } from '../../store/action
 class UpdateNote extends Component {
 	state = {
 		note: {
-			touched: false, 
-			valid: false, 
-			warning: 'Warning! Mustn\'t be empty.', 
+			touched: false,
+			valid: false,
+			warning: 'Warning! Mustn\'t be empty.',
 		}
 	}
 
@@ -82,7 +82,7 @@ class UpdateNote extends Component {
 
 	handleDeleteNote = () => {
 		const goForward = window.confirm('Do you want to delete this note');
-		
+
 		if (goForward) {
 			if (this.props.user && this.props.note) {
 				this.props.onAsyncDeleteNote(this.props.user.uid, this.props.note.id);
@@ -113,25 +113,25 @@ class UpdateNote extends Component {
 		return (
 			<div className="update-note">
 				{
-					this.props.authLoading || this.props.notesLoading ? 
-					<Loader /> : 
-					<Fragment>
+					this.props.authLoading || this.props.notesLoading ?
+						<Loader /> :
+						<Fragment>
 							<i className="material-icons-round icon icon--big update-note__go-back">
 								<Link to="/notes">arrow_back</Link>
 							</i>
 							<h1 className="page-heading update-note__page-heading">Update note</h1>
 							<form onSubmit={this.handleSubmit} className="update-note__form">
-								<Input 
-									type="text" 
-									name="note" 
+								<Input
+									type="text"
+									name="note"
 									value={note ? note.note : ''}
-									onChange={this.handleFieldChange} 
-									touched={noteField.touched} 
-									onBlur={this.handleTouch} 
-									valid={noteField.valid} 
-									required 
-									label="Note" 
-									hint={noteField.hint} 
+									onChange={this.handleFieldChange}
+									touched={noteField.touched}
+									onBlur={this.handleTouch}
+									valid={noteField.valid}
+									required
+									label="Note"
+									hint={noteField.hint}
 									warning={noteField.warning}
 									className="update-note__note" />
 								<Checkbox
@@ -140,15 +140,15 @@ class UpdateNote extends Component {
 									onChange={this.handleFieldChange}
 									label="Mark completed"
 									className="update-note__completed" />
-								<button 
-									type="submit" 
+								<button
+									type="submit"
 									className="btn--submit update-note__submit"
 									disabled={!noteField.valid}>Update note</button>
 							</form>
 							<i
 								className="material-icons-round icon icon--big update-note__delete-note"
 								onClick={this.handleDeleteNote}>delete</i>
-					</Fragment>
+						</Fragment>
 				}
 			</div>
 		);

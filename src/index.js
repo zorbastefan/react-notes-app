@@ -34,8 +34,12 @@ auth.onAuthStateChanged(user => {
 
 		store.dispatch(setUser({ uid, email, displayName, photoURL }));
 		store.dispatch(authEnd());
+
+		if (history.location.pathname === '/') {
+			history.push('/notes');
+		}
+
 		store.dispatch(asyncFetchNotes(uid));
-		// store.dispatch(authStart());
 	} else {
 		console.log('Signed out.');
 

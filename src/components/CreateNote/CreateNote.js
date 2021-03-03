@@ -13,10 +13,10 @@ import { asyncCreateNote } from '../../store/actions/notes-actions';
 class CreateNote extends Component {
 	state = {
 		note: {
-			value: '', 
-			touched: false, 
-			valid: false, 
-			warning: 'Warning! Mustn\'t be empty.', 
+			value: '',
+			touched: false,
+			valid: false,
+			warning: 'Warning! Mustn\'t be empty.',
 		}
 	}
 
@@ -70,29 +70,29 @@ class CreateNote extends Component {
 		return (
 			<div className="create-note">
 				{
-					this.props.authLoading || this.props.notesLoading ? 
-					<Loader /> : 
-					<Fragment>
-						<i className="material-icons-round icon icon--big create-note__go-back">
-							<Link to="/notes">arrow_back</Link>
-						</i>
-						<form onSubmit={this.handleSubmit} className="create-note__form">
-							<h1 className="page-heading page-heading__margin--bottom">Create note</h1>
-							<Input 
-								type="text" 
-								name="note" 
-								value={note.value}
-								onChange={this.handleFieldChange} 
-								touched={note.touched} 
-								onBlur={this.handleTouch} 
-								valid={note.valid} 
-								required 
-								label="Note" 
-								hint={note.hint} 
-								warning={note.warning} />
-							<button type="submit" disabled={!note.valid} className="btn--submit">Create note</button>
-						</form>
-					</Fragment>
+					this.props.authLoading || this.props.notesLoading ?
+						<Loader /> :
+						<Fragment>
+							<i className="material-icons-round icon icon--big create-note__go-back">
+								<Link to="/notes">arrow_back</Link>
+							</i>
+							<form onSubmit={this.handleSubmit} className="create-note__form">
+								<h1 className="page-heading page-heading__margin--bottom">Create note</h1>
+								<Input
+									type="text"
+									name="note"
+									value={note.value}
+									onChange={this.handleFieldChange}
+									touched={note.touched}
+									onBlur={this.handleTouch}
+									valid={note.valid}
+									required
+									label="Note"
+									hint={note.hint}
+									warning={note.warning} />
+								<button type="submit" disabled={!note.valid} className="btn--submit">Create note</button>
+							</form>
+						</Fragment>
 				}
 			</div>
 		);

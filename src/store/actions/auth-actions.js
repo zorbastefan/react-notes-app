@@ -13,7 +13,7 @@ export const authEnd = () => ({ type: AUTH_END });
 export const setUser = user => ({ type: SET_USER, user });
 const removeUser = () => ({ type: REMOVE_USER });
 const setError = error => ({ type: SET_ERROR, error });
-const removeError = () => ({ type: REMOVE_ERROR });
+export const removeError = () => ({ type: REMOVE_ERROR });
 
 export const asyncAuth = (registration, data) => {
 	const { email, password } = data;

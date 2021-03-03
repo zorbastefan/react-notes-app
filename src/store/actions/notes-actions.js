@@ -18,7 +18,7 @@ const fetchNotes = notes => ({ type: FETCH_NOTES, notes });
 export const updateNote = (id, updatedNote) => ({ type: UPDATE_NOTE, id, updatedNote });
 const deleteNote = id => ({ type: DELETE_NOTE, id });
 const setError = error => ({ type: SET_ERROR, error });
-const removeError = () => ({ type: REMOVE_ERROR });
+export const removeError = () => ({ type: REMOVE_ERROR });
 export const updateFilters = (filter, newVal) => ({ type: UPDATE_FILTERS, filter, newVal });
 
 export const asyncCreateNote = (uid, data) => {
@@ -120,7 +120,7 @@ export const asyncDeleteNote = (uid, id) => {
 
 				dispatch(deleteNote(id));
 				dispatch(requestEnd());
-				
+
 				history.push('/notes');
 			})
 			.catch(error => {
